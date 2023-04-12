@@ -1,26 +1,26 @@
 /* Small Screen */
 .container {
-  padding: 1rem;
+  padding: 7rem 1rem;
 }
 
 .provinsi {
-    text-align: center;
+  text-align: center;
 }
 
 .provinsi__title {
-    color: #80ec9c;
+  color: #80ec9c;
 }
 
 .provinsi__tagline {
-    color: #118AB2;
+  color: #118AB2;
 }
 
 table {
-    margin: 2.5rem auto;
+  margin: 2.5rem auto;
 }
 
 td {
-    padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 table, th, td {
@@ -30,19 +30,18 @@ table, th, td {
 
 /* Medium Screen */
 @media (min-width: 768px) {
-  table {
-    margin: 2.5rem auto;
-  }
-
-  td {
-      padding: 1rem 2rem;
+  .provinsi {
+    padding: +0.5rem;
   }
 }
 
 /* Large Screen */
 @media (min-width: 992px) {
-  /* 
-   * Nothing TODO HERE.
-   * We haven't styling Navbar.
-   */
+  .container {
+    padding: 2rem 0;
+  }
+
+  td {
+    padding: 1.5rem 2.5rem;
+  }
 }

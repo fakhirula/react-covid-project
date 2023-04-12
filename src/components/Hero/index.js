@@ -1,4 +1,4 @@
-import Assets from '../Assets/img/logo.png';
+import Assets from '../Assets/img/hero.png';
 import styles from './Hero.module.css';
 
 function Hero() {

@@ -1,48 +1,44 @@
+import Assets from '../Assets/img/addform.png';
 import styles from './AddCaseForm.module.css';
 
 function AddCaseForm(props) {
-    function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
+  }
 
-    }
+  function handleProvinsi(e) {}
 
-    function handleProvinsi(e) {
-        
-    }
+  function handleJumlah(e) {}
 
-    function handleJumlah(e) {
-        
-    }
-
-    function handleStatus(e) {
-        
-    }
+  function handleStatus(e) {}
 
   return (
     <div className={styles.container}>
       <div className={styles.form}>
         <div className={styles.form__left}>
-          <img
-            className={styles.form__image}
-            src="https://picsum.photos/536/354"
-            alt=""
-          />
+          <img className={styles.form__image} src={Assets} alt="" />
         </div>
         <div className={styles.form__right}>
-          <h3 className={styles.form__title}>Add Movie</h3>
+          <h3 className={styles.form__title}>Add Case</h3>
           <form onSubmit={handleSubmit}>
             <div>
-              <label className={styles.form__label} htmlFor="title">
+              <label className={styles.form__label} htmlFor="provinsi">
                 Provinsi
               </label>
-              <input
-                id="title"
+              <select
+                id="provinsi"
                 className={styles.form__input}
                 type="text"
-                placeholder="Enter movie title"
                 value=""
                 onChange={handleProvinsi}
-              />
+              >
+                <option value="">-- Select one --</option>
+                <option value="aceh">Aceh</option>
+                <option value="bandung">Bandung</option>
+                <option value="depok">Depok</option>
+                <option value="jakarta">Jakarta</option>
+                <option value="medan">Medan</option>
+              </select>
               <label className={styles.form__label} htmlFor="status">
                 Status
               </label>
@@ -50,7 +46,6 @@ function AddCaseForm(props) {
                 id="status"
                 className={styles.form__input}
                 type="text"
-                placeholder="Masukan Status"
                 value=""
                 onChange={handleStatus}
               >

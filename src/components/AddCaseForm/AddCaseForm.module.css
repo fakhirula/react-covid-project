@@ -1,0 +1,94 @@
+/* Small Screen */
+.container {
+  padding: 3rem 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.form__left {
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.form__title {
+  color: #80ec9c;
+  font-size: 2.5rem;
+}
+
+.form__label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+}
+
+.form__input {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #808080;
+  padding: 1em;
+  color: #221F1F;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__button {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #80ec9c;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form__button:hover {
+    background-color: #B81D24;
+    transition: all 0.3s ease-in-out;
+}
+
+.form__image {
+    background-image: url(../Assets/img/hero.png);
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+    .form {
+      padding: +0.5rem;
+    }
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+    .container {
+        padding: 3rem 8rem;
+        margin: 0 auto;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3rem 0;
+        gap: 6rem;
+    }
+
+    .form__left {
+        display: block;
+        flex-basis: 50%;
+    }
+
+    .form__right {
+        flex-basis: 40%;
+    }
+}
