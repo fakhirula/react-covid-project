@@ -35,7 +35,6 @@
 
 /* Medium Screen */
 @media (min-width: 768px) {
-
   .navbar {
     flex-direction: row;
     justify-content: space-between;

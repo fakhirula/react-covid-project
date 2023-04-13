@@ -8,7 +8,7 @@ function Main() {
   return (
     <main>
       <Hero />
-      <Provinsi image={'https://picsum.photos/400/200'} />
+      <Provinsi />
       <AddCaseForm />
     </main>
   );
