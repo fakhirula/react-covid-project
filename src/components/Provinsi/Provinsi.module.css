@@ -8,23 +8,35 @@
 }
 
 .provinsi__title {
+  margin-top: 1rem;
   color: #00BFA6;
+  font-size: 2.5rem;
 }
 
 .provinsi__tagline {
+  margin-top: 1rem;
+  font-size: 1.2rem;
   color: #118AB2;
 }
 
-table {
+.table__wrapper {
+    overflow-x: auto;
+  }
+  
+.table__wrapper table {
+  border-collapse: collapse;
+  /* width: 100%; */
+  max-width: 100%;
   margin: 2.5rem auto;
 }
 
-td {
-  padding: 1rem;
+.table__wrapper th,
+.table__wrapper td {
+  padding: 0.8rem 1rem;
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid #000;
   border-collapse: collapse;
 }
 
@@ -32,6 +44,11 @@ table, th, td {
 @media (min-width: 768px) {
   .provinsi {
     padding: +0.5rem;
+  }
+
+  .table__wrapper th,
+  .table__wrapper td {
+    padding: 1rem;
   }
 }
 
@@ -41,7 +58,8 @@ table, th, td {
     padding: 2rem 0;
   }
 
-  td {
+  .table__wrapper th,
+  .table__wrapper td {
     padding: 1.5rem 2.5rem;
   }
 }

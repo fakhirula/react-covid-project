@@ -1,6 +1,11 @@
+import Data from './Data';
 import styles from './Provinsi.module.css';
+import { nanoid } from 'nanoid';
 
 function Provinsi(props) {
+  const { status, setStatus } = props;
+  let no = 1;
+
   return (
     <div className={styles.container}>
       <div className={styles.provinsi}>
@@ -12,60 +17,27 @@ function Provinsi(props) {
             Data Covid Berdasarkan Provinsi
           </h3>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <td>No</td>
-              <td>Provinsi</td>
-              <td>Positif</td>
-              <td>Sembuh</td>
-              <td>Dirawat</td>
-              <td>Meninggal</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Aceh</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>DKI Jakarta</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Jawa Barat</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Jawa Tengah</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Jawa Timur</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className={styles.table__wrapper}>
+          <table>
+            <thead>
+              <tr>
+                <td>No</td>
+                <td>Provinsi</td>
+                <td>Positif</td>
+                <td>Sembuh</td>
+                <td>Dirawat</td>
+                <td>Meninggal</td>
+              </tr>
+            </thead>
+            <tbody>
+              {status.map(function (status) {
+                return (
+                  <Data key={status.kota} allStatus={status} no={no++} />
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

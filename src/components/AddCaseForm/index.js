@@ -2,6 +2,8 @@ import Assets from '../Assets/img/addform.png';
 import styles from './AddCaseForm.module.css';
 
 function AddCaseForm(props) {
+  const { status, setStatus } = props;
+
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -33,11 +35,11 @@ function AddCaseForm(props) {
                 onChange={handleProvinsi}
               >
                 <option value="">-- Select one --</option>
-                <option value="aceh">Aceh</option>
-                <option value="bandung">Bandung</option>
-                <option value="depok">Depok</option>
-                <option value="jakarta">Jakarta</option>
-                <option value="medan">Medan</option>
+                {status
+                  .sort((a, b) => (a.kota > b.kota ? 1 : -1))
+                  .map(function (status) {
+                    return <option value={status.kota}>{status.kota}</option>;
+                  })}
               </select>
               <label className={styles.form__label} htmlFor="status">
                 Status
@@ -50,6 +52,7 @@ function AddCaseForm(props) {
                 onChange={handleStatus}
               >
                 <option value="">-- Select one --</option>
+                
                 <option value="positif">Positif</option>
                 <option value="sembuh">Sembuh</option>
                 <option value="dirawat">Dirawat</option>
