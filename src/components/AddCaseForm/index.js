@@ -1,18 +1,43 @@
+import { useState } from 'react';
 import Assets from '../Assets/img/addform.png';
 import styles from './AddCaseForm.module.css';
 
 function AddCaseForm(props) {
-  const { status, setStatus } = props;
+  const { provinces, updateProvinces } = props;
+  const [selectedProvinceIndex, setSelectedProvinceIndex] = useState(0);
+  const [status, setStatus] = useState('kasus');
+  const [value, setValue] = useState('');
 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+  const handleProvinceChange = (event) => {
+    const selectedProvince = event.target.value;
+    const index = provinces.findIndex(
+      (province) => province.kota === selectedProvince
+    );
+    setSelectedProvinceIndex(index);
+  };
 
-  function handleProvinsi(e) {}
+  const handleStatusChange = (event) => {
+    setStatus(event.target.value);
+  };
 
-  function handleJumlah(e) {}
+  const handleValueChange = (event) => {
+    setValue(event.target.value);
+  };
 
-  function handleStatus(e) {}
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const totalCases =
+      parseInt(provinces[selectedProvinceIndex].kasus) + parseInt(value);
+    const updatedProvinces = updateProvinces(
+      selectedProvinceIndex,
+      status,
+      totalCases
+    );
+    setValue('');
+    setStatus('kasus');
+
+    console.log(provinces[selectedProvinceIndex].kasus+1);
+  };
 
   return (
     <div className={styles.container}>
@@ -30,16 +55,15 @@ function AddCaseForm(props) {
               <select
                 id="provinsi"
                 className={styles.form__input}
-                type="text"
-                value=""
-                onChange={handleProvinsi}
+                value={provinces[selectedProvinceIndex].kota}
+                onChange={handleProvinceChange}
               >
                 <option value="">-- Select one --</option>
-                {status
-                  .sort((a, b) => (a.kota > b.kota ? 1 : -1))
-                  .map(function (status) {
-                    return <option value={status.kota}>{status.kota}</option>;
-                  })}
+                {provinces.map((province, index) => (
+                  <option key={index} value={province.kota}>
+                    {province.kota}
+                  </option>
+                ))}
               </select>
               <label className={styles.form__label} htmlFor="status">
                 Status
@@ -47,13 +71,10 @@ function AddCaseForm(props) {
               <select
                 id="status"
                 className={styles.form__input}
-                type="text"
-                value=""
-                onChange={handleStatus}
+                value={status}
+                onChange={handleStatusChange}
               >
-                <option value="">-- Select one --</option>
-                
-                <option value="positif">Positif</option>
+                <option value="kasus">Kasus</option>
                 <option value="sembuh">Sembuh</option>
                 <option value="dirawat">Dirawat</option>
                 <option value="meninggal">Meninggal</option>
@@ -64,10 +85,11 @@ function AddCaseForm(props) {
               <input
                 id="jumlah"
                 className={styles.form__input}
-                type="text"
+                type="number"
                 placeholder="Masukan Jumlah Kasus"
-                value=""
-                onChange={handleJumlah}
+                value={value}
+                onChange={handleValueChange}
+                min={0}
               />
             </div>
             <button className={styles.form__button}>Submit</button>

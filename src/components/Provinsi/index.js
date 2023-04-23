@@ -1,10 +1,26 @@
-import Data from './Data';
+import { useState } from 'react';
 import styles from './Provinsi.module.css';
-import { nanoid } from 'nanoid';
+import provincesData from '../../utils/constants/provinces';
+import AddCaseForm from '../AddCaseForm';
 
-function Provinsi(props) {
-  const { status, setStatus } = props;
+function Provinsi() {
+  const [provinces, setProvinces] = useState(provincesData.provinces);
+
   let no = 1;
+
+  // fungsi untuk mengupdate data provinsi
+  const updateProvinces = (provinceIndex, statusType, value) => {
+    const updatedProvinces = provinces.map((province, index) => {
+      if (index === provinceIndex) {
+        return {
+          ...province,
+          [statusType]: value,
+        };
+      }
+      return province;
+    });
+    setProvinces(updatedProvinces);
+  };
 
   return (
     <div className={styles.container}>
@@ -30,15 +46,23 @@ function Provinsi(props) {
               </tr>
             </thead>
             <tbody>
-              {status.map(function (status) {
+              {provinces.map((data, index) => {
                 return (
-                  <Data key={status.kota} allStatus={status} no={no++} />
+                  <tr key={data.kota}>
+                    <td>{no++}</td>
+                    <td>{data.kota}</td>
+                    <td>{data.kasus}</td>
+                    <td>{data.sembuh}</td>
+                    <td>{data.dirawat}</td>
+                    <td>{data.meninggal}</td>
+                  </tr>
                 );
               })}
             </tbody>
           </table>
         </div>
       </div>
+      <AddCaseForm provinces={provinces} updateProvinces={updateProvinces} />
     </div>
   );
 }

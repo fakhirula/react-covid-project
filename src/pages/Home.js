@@ -8,13 +8,18 @@ import TotalCase from "../components/TotalCase";
 import data from "../utils/constants/provinces";
 
 function Main() {
-  const [status, setStatus] = useState(data.provinces);
+  const [provinces, setProvinces] = useState(data.provinces);
+
+  const setStatus = (updatedProvinceData) => {
+    setProvinces(updatedProvinceData);
+  };
+
   return (
     <main>
       <Hero />
       <TotalCase />
-      <Provinsi status={status} setStatus={setStatus} />
-      <AddCaseForm status={status} setStatus={setStatus} />
+      <Provinsi provinces={provinces} />
+      <AddCaseForm provinces={provinces} setStatus={setStatus} />
     </main>
   );
 }
