@@ -11,7 +11,6 @@ function Main() {
       <Hero />
       <TotalCase />
       <Provinsi />
-      <AddCaseForm />
     </main>
   );
 }

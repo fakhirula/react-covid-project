@@ -38,7 +38,7 @@ function AddCaseForm(props) {
 
     updatedProvinces[selectedProvinceIndex] = selectedProvince;
     props.onAddCase(updatedProvinces);
-    setSelectedProvinceIndex('');
+    setStatus('');
     setValue(0);
   };
 
