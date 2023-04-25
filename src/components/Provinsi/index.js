@@ -1,24 +1,12 @@
 import { useState } from 'react';
-import styles from './Provinsi.module.css';
 import provincesData from '../../utils/constants/provinces';
 import AddCaseForm from '../AddCaseForm';
+import styles from './Provinsi.module.css';
 
 function Provinsi() {
   const [provinces, setProvinces] = useState(provincesData.provinces);
 
-  let no = 1;
-
-  // fungsi untuk mengupdate data provinsi
-  const updateProvinces = (provinceIndex, statusType, value) => {
-    const updatedProvinces = provinces.map((province, index) => {
-      if (index === provinceIndex) {
-        return {
-          ...province,
-          [statusType]: value,
-        };
-      }
-      return province;
-    });
+  const handleAddCase = (updatedProvinces) => {
     setProvinces(updatedProvinces);
   };
 
@@ -37,32 +25,30 @@ function Provinsi() {
           <table>
             <thead>
               <tr>
-                <td>No</td>
-                <td>Provinsi</td>
-                <td>Positif</td>
-                <td>Sembuh</td>
-                <td>Dirawat</td>
-                <td>Meninggal</td>
+                <th>No</th>
+                <th>Provinsi</th>
+                <th>Positif</th>
+                <th>Sembuh</th>
+                <th>Dirawat</th>
+                <th>Meninggal</th>
               </tr>
             </thead>
             <tbody>
-              {provinces.map((data, index) => {
-                return (
-                  <tr key={data.kota}>
-                    <td>{no++}</td>
-                    <td>{data.kota}</td>
-                    <td>{data.kasus}</td>
-                    <td>{data.sembuh}</td>
-                    <td>{data.dirawat}</td>
-                    <td>{data.meninggal}</td>
-                  </tr>
-                );
-              })}
+              {provinces.map((province, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{province.kota}</td>
+                  <td>{province.kasus}</td>
+                  <td>{province.sembuh}</td>
+                  <td>{province.dirawat}</td>
+                  <td>{province.meninggal}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
+          <AddCaseForm provinces={provinces} onAddCase={handleAddCase} />
         </div>
       </div>
-      <AddCaseForm provinces={provinces} updateProvinces={updateProvinces} />
     </div>
   );
 }

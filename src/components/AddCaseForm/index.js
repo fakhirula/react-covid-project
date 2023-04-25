@@ -1,19 +1,49 @@
 import { useState } from 'react';
+import provincesData from '../../utils/constants/provinces';
 import Assets from '../Assets/img/addform.png';
 import styles from './AddCaseForm.module.css';
 
 function AddCaseForm(props) {
-  const { provinces, updateProvinces } = props;
-  const [selectedProvinceIndex, setSelectedProvinceIndex] = useState(0);
-  const [status, setStatus] = useState('kasus');
-  const [value, setValue] = useState('');
+  const [selectedProvinceIndex, setSelectedProvinceIndex] = useState('');
+  const [status, setStatus] = useState('');
+  const [value, setValue] = useState(0);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (selectedProvinceIndex === '' || !status || !value) {
+      alert('Please fill out all fields!');
+      return;
+    }
+
+    const updatedProvinces = [...props.provinces];
+    const selectedProvince = { ...updatedProvinces[selectedProvinceIndex] };
+
+    switch (status) {
+      case 'kasus':
+        selectedProvince.kasus += value;
+        break;
+      case 'sembuh':
+        selectedProvince.sembuh += value;
+        break;
+      case 'dirawat':
+        selectedProvince.dirawat += value;
+        break;
+      case 'meninggal':
+        selectedProvince.meninggal += value;
+        break;
+      default:
+        break;
+    }
+
+    updatedProvinces[selectedProvinceIndex] = selectedProvince;
+    props.onAddCase(updatedProvinces);
+    setSelectedProvinceIndex('');
+    setValue(0);
+  };
 
   const handleProvinceChange = (event) => {
-    const selectedProvince = event.target.value;
-    const index = provinces.findIndex(
-      (province) => province.kota === selectedProvince
-    );
-    setSelectedProvinceIndex(index);
+    setSelectedProvinceIndex(event.target.selectedIndex - 1);
   };
 
   const handleStatusChange = (event) => {
@@ -21,23 +51,10 @@ function AddCaseForm(props) {
   };
 
   const handleValueChange = (event) => {
-    setValue(event.target.value);
+    setValue(parseInt(event.target.value));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const totalCases =
-      parseInt(provinces[selectedProvinceIndex].kasus) + parseInt(value);
-    const updatedProvinces = updateProvinces(
-      selectedProvinceIndex,
-      status,
-      totalCases
-    );
-    setValue('');
-    setStatus('kasus');
-
-    console.log(provinces[selectedProvinceIndex].kasus+1);
-  };
+  const provinces = provincesData.provinces;
 
   return (
     <div className={styles.container}>
@@ -55,10 +72,16 @@ function AddCaseForm(props) {
               <select
                 id="provinsi"
                 className={styles.form__input}
-                value={provinces[selectedProvinceIndex].kota}
+                value={
+                  selectedProvinceIndex !== ''
+                    ? provinces[selectedProvinceIndex].kota
+                    : ''
+                }
                 onChange={handleProvinceChange}
               >
-                <option value="">-- Select one --</option>
+                <option value="" disabled>
+                  -- Select one --
+                </option>
                 {provinces.map((province, index) => (
                   <option key={index} value={province.kota}>
                     {province.kota}
@@ -74,6 +97,9 @@ function AddCaseForm(props) {
                 value={status}
                 onChange={handleStatusChange}
               >
+                <option value="" disabled>
+                  -- Select one --
+                </option>
                 <option value="kasus">Kasus</option>
                 <option value="sembuh">Sembuh</option>
                 <option value="dirawat">Dirawat</option>

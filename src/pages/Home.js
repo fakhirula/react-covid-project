@@ -1,25 +1,17 @@
-import { useState } from "react";
-import AddCaseForm from "../components/AddCaseForm";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
-import Provinsi from "../components/Provinsi";
-import TotalCase from "../components/TotalCase";
-import data from "../utils/constants/provinces";
+import AddCaseForm from '../components/AddCaseForm';
+import Footer from '../components/Footer';
+import Hero from '../components/Hero';
+import Navbar from '../components/Navbar';
+import Provinsi from '../components/Provinsi';
+import TotalCase from '../components/TotalCase';
 
 function Main() {
-  const [provinces, setProvinces] = useState(data.provinces);
-
-  const setStatus = (updatedProvinceData) => {
-    setProvinces(updatedProvinceData);
-  };
-
   return (
     <main>
       <Hero />
       <TotalCase />
-      <Provinsi provinces={provinces} />
-      <AddCaseForm provinces={provinces} setStatus={setStatus} />
+      <Provinsi />
+      <AddCaseForm />
     </main>
   );
 }
