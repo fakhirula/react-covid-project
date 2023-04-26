@@ -6,10 +6,10 @@ function TotalCase() {
   const status = data.indonesia;
 
   return (
-    <div className={styles.container}>
+    <div id="indonesia" className={styles.container}>
       <div className={styles.header}>
         <h2 className={styles.header__title}>Indonesia</h2>
-        <h3 className={styles.header__desc}>
+        <h3 className={styles.header__tagline}>
           Data Covid Berdasarkan Indonesia
         </h3>
       </div>

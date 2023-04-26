@@ -3,11 +3,13 @@ import styles from './Hero.module.css';
 
 function Hero() {
   return (
-    <div className={styles.container}>
+    <div id="hero" className={styles.container}>
       <section className={styles.hero}>
         <div className={styles.hero__left}>
           <h2 className={styles.hero__title}>Covid ID</h2>
-          <h4 className={styles.hero__tagline}>Monitoring Perkembangan Covid-19</h4>
+          <h4 className={styles.hero__tagline}>
+            Monitoring Perkembangan Covid-19
+          </h4>
           <h4 className={styles.hero__desc}>
             Introducing a Covid monitoring application built using the React-js
             library<br></br>

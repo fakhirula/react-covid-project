@@ -1,6 +1,6 @@
 /* Small Screen */
 .container {
-  padding: 7rem 1rem;
+  padding: 3rem 1rem;
 }
 
 .provinsi {
@@ -9,7 +9,7 @@
 
 .provinsi__title {
   margin-top: 1rem;
-  color: #00BFA6;
+  color: #009884;
   font-size: 2.5rem;
 }
 
@@ -21,18 +21,18 @@
 
 .table__wrapper {
     overflow-x: auto;
+    margin: 2.5rem auto;
   }
   
 .table__wrapper table {
-  border-collapse: collapse;
-  /* width: 100%; */
+  width: 100%;
   max-width: 100%;
-  margin: 2.5rem auto;
+  margin: 0 auto;
 }
 
 .table__wrapper th,
 .table__wrapper td {
-  padding: 0.8rem 1rem;
+  padding: 0.8rem;
 }
 
 table, th, td {
@@ -42,24 +42,29 @@ table, th, td {
 
 /* Medium Screen */
 @media (min-width: 768px) {
-  .provinsi {
-    padding: +0.5rem;
+  .container {
+    padding: 6rem 2.5rem;
   }
 
-  .table__wrapper th,
-  .table__wrapper td {
-    padding: 1rem;
+  .provinsi__title {
+    font-size: 3rem;
+  }
+
+  .provinsi__tagline {
+    font-size: 1.5rem;
   }
 }
 
 /* Large Screen */
 @media (min-width: 992px) {
   .container {
-    padding: 2rem 0;
+    padding: 4rem 8rem;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   .table__wrapper th,
   .table__wrapper td {
-    padding: 1.5rem 2.5rem;
+    padding: 1.2rem;
   }
 }

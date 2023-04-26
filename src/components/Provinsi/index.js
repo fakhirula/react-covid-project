@@ -11,12 +11,10 @@ function Provinsi() {
   };
 
   return (
-    <div className={styles.container}>
+    <div id="provinsi" className={styles.container}>
       <div className={styles.provinsi}>
         <div>
-          <h1 id="provinsi" className={styles.provinsi__title}>
-            Provinsi
-          </h1>
+          <h1 className={styles.provinsi__title}>Provinsi</h1>
           <h3 className={styles.provinsi__tagline}>
             Data Covid Berdasarkan Provinsi
           </h3>
@@ -46,8 +44,8 @@ function Provinsi() {
               ))}
             </tbody>
           </table>
-          <AddCaseForm provinces={provinces} onAddCase={handleAddCase} />
         </div>
+        <AddCaseForm provinces={provinces} onAddCase={handleAddCase} />
       </div>
     </div>
   );

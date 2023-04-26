@@ -20,17 +20,19 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin: 0;
+}
+
+.navbar__list a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .navbar__item {
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
 }
 
-.navbar__item:hover {
-    color: #5bf7a5;
-    transition: all 0.3s ease-in-out;
+.navbar__item a:hover {
+    color: #6bf7ae;
 }
 
 /* Medium Screen */
@@ -60,5 +62,10 @@
 @media (min-width: 992px) {
   .container {
     padding: 0.8rem 5rem;
+  }
+
+  .navbar {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }

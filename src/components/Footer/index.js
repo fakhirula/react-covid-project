@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 
 function Footer() {
   return (
-    <div className={styles.container}>
+    <div id="footer" className={styles.container}>
       <footer className={styles.footer}>
         <div className={styles.footer__brand}>
           <h2 className={styles.footer__title}>Covid ID</h2>

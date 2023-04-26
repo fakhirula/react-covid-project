@@ -6,8 +6,8 @@ function Card(props) {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.card__title}>{listStatus.status}</h1>
-        <h4 className={styles.card__count}>{listStatus.total}</h4>
+        <h2 className={styles.card__title}>{listStatus.status}</h2>
+        <p className={styles.card__count}>{listStatus.total}</p>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 /* Small Screen */
 .container {
-  padding: 3rem 1rem;
+  padding-top: 3rem;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  margin: 3rem 0;
+  margin-top: 3rem;
 }
 
 .form__left {
@@ -14,16 +14,28 @@
   display: none;
 }
 
+.form__right {
+  text-align: left;
+}
+
+.form__spacing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
 .form__title {
   margin-top: 1rem;
-  color: #00BFA6;
+  text-align: center;
   font-size: 2.5rem;
+  color: #009884;
 }
 
 .form__label {
-    display: block;
-    margin: 1rem 0 0.5rem;
-    font-weight: bold;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .form__input {
@@ -32,6 +44,7 @@
   border: none;
   border-bottom: 1px solid #808080;
   padding: 1em;
+  font-size: 1rem;
   color: #221F1F;
 }
 
@@ -41,54 +54,49 @@
 
 .form__button {
   padding: 1rem 2rem;
-  margin-top: 1rem;
   border: none;
   border-radius: 8px;
-  background-color: #00BFA6;
+  background-color: #009884;
   color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
 }
 
 .form__button:hover {
-    background-color: #097a7a;
+  background-color: #097a7a;
 }
 
 .form__image {
-    background-image: url(../Assets/img/hero.png);
-    max-width: 100%;
-    border-radius: 15px;
+  background-image: url(../Assets/img/hero.png);
+  max-width: 100%;
+  border-radius: 15px;
 }
 
 /* Medium Screen */
 @media (min-width: 768px) {
-    .form {
-      padding: +0.5rem;
-    }
+  .form__title {
+    font-size: 3rem;
+  }
 }
 
 /* Large Screen */
 @media (min-width: 992px) {
-    .container {
-        padding: 3rem 8rem;
-        margin: 0 auto;
-    }
+  .form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6rem;
+  }
 
-    .form {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 3rem 0;
-        gap: 6rem;
-    }
+  .form__left {
+      display: block;
+      flex-basis: 50%;
+  }
 
-    .form__left {
-        display: block;
-        flex-basis: 50%;
-    }
-
-    .form__right {
-        flex-basis: 40%;
-    }
+  .form__right {
+      flex-basis: 40%;
+      text-align: left;
+      align-self: start;
+  }
 }

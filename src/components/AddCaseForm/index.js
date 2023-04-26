@@ -57,14 +57,14 @@ function AddCaseForm(props) {
   const provinces = provincesData.provinces;
 
   return (
-    <div className={styles.container}>
+    <div id="form" className={styles.container}>
       <div className={styles.form}>
         <div className={styles.form__left}>
           <img className={styles.form__image} src={Assets} alt="" />
         </div>
         <div className={styles.form__right}>
-          <h3 className={styles.form__title}>Add Case</h3>
-          <form onSubmit={handleSubmit}>
+          <h3 className={styles.form__title}>Covid Form</h3>
+          <form className={styles.form__spacing} onSubmit={handleSubmit}>
             <div>
               <label className={styles.form__label} htmlFor="provinsi">
                 Provinsi
@@ -88,6 +88,8 @@ function AddCaseForm(props) {
                   </option>
                 ))}
               </select>
+            </div>
+            <div>
               <label className={styles.form__label} htmlFor="status">
                 Status
               </label>
@@ -105,6 +107,8 @@ function AddCaseForm(props) {
                 <option value="dirawat">Dirawat</option>
                 <option value="meninggal">Meninggal</option>
               </select>
+            </div>
+            <div>
               <label className={styles.form__label} htmlFor="jumlah">
                 Jumlah
               </label>
