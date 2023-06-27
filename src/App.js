@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Global from "./pages/covid/Global";
 import Provinsi from "./pages/covid/Provinsi";
 import Indonesia from "./pages/covid/Indonesia";
 import About from "./pages/About";
@@ -16,7 +15,6 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/covid/global" element={<Global />} />
           <Route path="/covid/indonesia" element={<Indonesia />} />
           <Route path="/covid/provinsi" element={<Provinsi />} />
           <Route path="/about" element={<About />} />

@@ -6,7 +6,7 @@ function Main() {
   return (
     <main>
       <Hero />
-      <TotalCase />
+      <TotalCase title="Provinsi" subtitle="Provinsi" />
       <Datas />
     </main>
   );

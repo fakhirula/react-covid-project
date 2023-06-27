@@ -1,13 +1,11 @@
 import Hero from '../components/Hero';
-import Provinsi from '../components/Datas';
 import TotalCase from '../components/TotalCase';
 
 function Main() {
   return (
     <main>
       <Hero />
-      <TotalCase />
-      <Provinsi />
+      <TotalCase title="Global Situation" subtitle="Global" />
     </main>
   );
 }

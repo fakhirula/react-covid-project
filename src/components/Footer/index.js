@@ -11,7 +11,7 @@ function Footer() {
             <p className="footer__author">Developed by @fakhirula</p>
           </div>
           <ul className="footer__list">
-            <Link className="footer__item" to="/covid/global">
+            <Link className="footer__item" to="/">
               Global
             </Link>
             <Link className="footer__item" to="/covid/indonesia">

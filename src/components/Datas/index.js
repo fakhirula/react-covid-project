@@ -2,6 +2,7 @@ import { useState } from 'react';
 import provincesData from '../../utils/constants/provinces';
 import AddCaseForm from '../AddCaseForm';
 import StyledDatas from './StyledDatas';
+import Data from '../Data';
 
 function Datas() {
   const [provinces, setProvinces] = useState(provincesData.provinces);
@@ -32,18 +33,7 @@ function Datas() {
                   <th>Meninggal</th>
                 </tr>
               </thead>
-              <tbody>
-                {provinces.map((province, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{province.kota}</td>
-                    <td>{province.kasus}</td>
-                    <td>{province.sembuh}</td>
-                    <td>{province.dirawat}</td>
-                    <td>{province.meninggal}</td>
-                  </tr>
-                ))}
-              </tbody>
+              <tbody>{<Data provinces={provinces} />}</tbody>
             </table>
           </div>
           <AddCaseForm provinces={provinces} onAddCase={handleAddCase} />

@@ -12,10 +12,7 @@ function Navbar() {
           <div>
             <ul className="navbar__list">
               <li className="navbar__item">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="navbar__item">
-                <Link to="/covid/global">Global</Link>
+                <Link to="/">Global</Link>
               </li>
               <li className="navbar__item">
                 <Link to="/covid/indonesia">Indonesia</Link>
