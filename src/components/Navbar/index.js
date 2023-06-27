@@ -1,30 +1,36 @@
-import styles from './Navbar.module.css';
+import StyledNavbar from './StyledNavbar';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div id="navbar" className={styles.container}>
-      <nav className={styles.navbar}>
-        <div className={styles.navbar__brand}>
-          <h2>Covid ID</h2>
-        </div>
-        <div>
-          <ul className={styles.navbar__list}>
-            <li className={styles.navbar__item}>
-              <a href="#global">Global</a>
-            </li>
-            <li className={styles.navbar__item}>
-              <a href="#indonesia">Indonesia</a>
-            </li>
-            <li className={styles.navbar__item}>
-              <a href="#provinsi">Provinsi</a>
-            </li>
-            <li className={styles.navbar__item}>
-              <a href="#about">About</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <StyledNavbar>
+      <div id="navbar" className="container">
+        <nav className="navbar">
+          <div className="navbar__brand">
+            <h2>Covid ID</h2>
+          </div>
+          <div>
+            <ul className="navbar__list">
+              <li className="navbar__item">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="navbar__item">
+                <Link to="/covid/global">Global</Link>
+              </li>
+              <li className="navbar__item">
+                <Link to="/covid/indonesia">Indonesia</Link>
+              </li>
+              <li className="navbar__item">
+                <Link to="/covid/provinsi">Provinsi</Link>
+              </li>
+              <li className="navbar__item">
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </StyledNavbar>
   );
 }
 

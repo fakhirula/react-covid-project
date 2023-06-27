@@ -1,28 +1,26 @@
 import Assets from '../Assets/img/hero.png';
-import styles from './Hero.module.css';
+import StyledHero from './StyledHero';
 
 function Hero() {
   return (
-    <div id="hero" className={styles.container}>
-      <section className={styles.hero}>
-        <div className={styles.hero__left}>
-          <h2 className={styles.hero__title}>Covid ID</h2>
-          <h4 className={styles.hero__tagline}>
-            Monitoring Perkembangan Covid-19
+    <StyledHero>
+      <section className="hero">
+        <div className="hero__left">
+          <h2 className="hero__title">Covid ID</h2>
+          <h4 className="hero__tagline">Monitoring Perkembangan Covid-19</h4>
+          <h4 className="hero__desc">
+            Introducing a Covid monitoring application built using the
+            React-js library<br></br>
+            This application is designed to assist the public in monitoring
+            the progress of Covid and hopefully prove to be beneficial.
           </h4>
-          <h4 className={styles.hero__desc}>
-            Introducing a Covid monitoring application built using the React-js
-            library<br></br>
-            This application is designed to assist the public in monitoring the
-            progress of Covid and hopefully prove to be beneficial.
-          </h4>
-          <button className={styles.hero__button}>Vaccine</button>
+          <button className="hero__button">Vaccine</button>
         </div>
-        <div className={styles.hero__right}>
-          <img className={styles.hero__image} src={Assets} alt="" />
+        <div className="hero__right">
+          <img className="hero__image" src={Assets} alt="" />
         </div>
       </section>
-    </div>
+    </StyledHero>
   );
 }
 

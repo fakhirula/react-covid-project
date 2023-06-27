@@ -1,7 +1,5 @@
-import Footer from '../components/Footer';
 import Hero from '../components/Hero';
-import Navbar from '../components/Navbar';
-import Provinsi from '../components/Provinsi';
+import Provinsi from '../components/Datas';
 import TotalCase from '../components/TotalCase';
 
 function Main() {
@@ -17,9 +15,7 @@ function Main() {
 function Home() {
   return (
     <>
-      <Navbar />
       <Main />
-      <Footer />
     </>
   );
 }
