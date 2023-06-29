@@ -2,18 +2,14 @@ import Hero from '../components/Hero';
 
 function Main() {
   return (
-    <main>
+    <>
       <Hero />
-    </main>
+    </>
   );
 }
 
 function About() {
-  return (
-    <>
-      <Main />
-    </>
-  );
+  return <Main />;
 }
 
 export default About;

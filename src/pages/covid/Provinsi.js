@@ -5,7 +5,7 @@ import data from '../../utils/constants/indonesia';
 
 function Main() {
   return (
-    <main>
+    <>
       <Hero />
       <TotalCase
         title="Provinsi"
@@ -13,16 +13,12 @@ function Main() {
         covidData={data.indonesia}
       />
       <Datas />
-    </main>
+    </>
   );
 }
 
 function Provinsi() {
-  return (
-    <>
-      <Main />
-    </>
-  );
+  return <Main />;
 }
 
 export default Provinsi;

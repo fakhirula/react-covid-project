@@ -4,7 +4,7 @@ import StyledFooter from './StyledFooter';
 function Footer() {
   return (
     <StyledFooter>
-      <div id="footer" className="container">
+      <div className="container">
         <footer className="footer">
           <div className="footer__brand">
             <h2 className="footer__title">Covid ID</h2>

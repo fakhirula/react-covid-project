@@ -2,13 +2,10 @@ import styled from "styled-components";
 
 const StyledHero = styled.div`
   /* Small Screen */
-  .container {
-    padding: 0rem 0rem;
-  }
-
   .hero {
     display: flex;
     flex-direction: column-reverse;
+    padding: 3rem 1rem;
   }
 
   .hero__left {
@@ -60,14 +57,11 @@ const StyledHero = styled.div`
 
   /* Medium Screen */
   @media (min-width: 768px) {
-    .container {
-      padding: 6rem 2.5rem;
-    }
-
     .hero {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      padding: 4rem 2.5rem;
     }
 
     .hero__title {
@@ -89,10 +83,8 @@ const StyledHero = styled.div`
 
   /* Large Screen */
   @media (min-width: 992px) {
-    .container {
-      padding: 4rem 8rem;
-      max-width: 1440px;
-      margin: 0 auto;
+    .hero {
+      padding: 4rem;
     }
   }
 `;

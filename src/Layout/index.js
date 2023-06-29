@@ -4,7 +4,7 @@ import Container from '../components/Container';
 
 function Layout(props) {
   return (
-      <>
+    <>
       <Navbar />
         <Container>
           <main>{props.children}</main>

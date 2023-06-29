@@ -12,6 +12,8 @@ const StyledFooter = styled.div`
   .footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0rem 1rem;
   }
 
   .footer__brand {
@@ -67,6 +69,7 @@ const StyledFooter = styled.div`
 
     .footer {
       max-width: 1440px;
+      padding: 1rem;
       margin: 0 auto;
     }
   }

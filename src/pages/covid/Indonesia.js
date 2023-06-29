@@ -5,14 +5,14 @@ import TotalCase from '../../components/TotalCase';
 
 function Main({ covidData }) {
   return (
-    <main>
+    <>
       <Hero />
       <TotalCase
         title="Indonesia Situation"
         subtitle="Indonesia"
         covidData={covidData}
       />
-    </main>
+    </>
   );
 }
 
@@ -36,11 +36,7 @@ function Indonesia() {
     });
   }, []);
 
-  return (
-    <>
-      <Main covidData={covidData} />
-    </>
-  );
+  return <Main covidData={covidData} />;
 }
 
 export default Indonesia;

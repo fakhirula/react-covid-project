@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledTotalCase = styled.div`
   /* Small screen */
   .container {
-    padding: 3rem 1rem;
+    padding: 3rem 2.5rem;
     text-align: center;
     background-color: #f8f9fa;
   }
@@ -22,9 +22,7 @@ const StyledTotalCase = styled.div`
 
   .cards {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
     margin: 2.5rem 0;
     gap: 1rem;
   }
@@ -32,7 +30,7 @@ const StyledTotalCase = styled.div`
   /* Medium Screen */
   @media (min-width: 768px) {
     .container {
-      padding: 6rem 2.5rem;
+      padding: 4rem 2.5rem;
     }
 
     .header__title {
@@ -42,21 +40,18 @@ const StyledTotalCase = styled.div`
     .header__tagline {
       font-size: 1.5rem;
     }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 4rem 0;
+    }
   }
 
   /* Large screen */
   @media (min-width: 992px) {
     .container {
-      padding: 4rem 8rem;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      padding: 4rem;
     }
   }
 `;

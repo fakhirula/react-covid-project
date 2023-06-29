@@ -6,12 +6,15 @@ const StyledNavbar = styled.div`
     background-color: #097a7a;
     padding: 1rem;
     color: #fff;
+    text-align: center;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
   }
 
   .navbar {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
   }
 
   .navbar__brand {
@@ -21,8 +24,9 @@ const StyledNavbar = styled.div`
 
   .navbar__list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     list-style: none;
+    margin: 0 auto;
   }
 
   .navbar__list a {
@@ -31,11 +35,12 @@ const StyledNavbar = styled.div`
   }
 
   .navbar__item {
-      cursor: pointer;
+    margin: 0 1rem;
+    cursor: pointer;
   }
 
   .navbar__item a:hover {
-      color: #6bf7ae;
+    color: #6bf7ae;
   }
 
   /* Medium Screen */
@@ -45,6 +50,7 @@ const StyledNavbar = styled.div`
       justify-content: space-between;
       align-items: center;
       padding: +0.5rem;
+      text-align: left;
     }
 
     .navbar__brand {
@@ -53,11 +59,7 @@ const StyledNavbar = styled.div`
     }
 
     .navbar__list {
-      flex-direction: row;
-    }
-
-    .navbar__item {
-      margin: 0 1rem;
+      margin: 0;
     }
   }
 
@@ -69,6 +71,7 @@ const StyledNavbar = styled.div`
 
     .navbar {
       max-width: 1440px;
+      padding: 1rem;
       margin: 0 auto;
     }
   }

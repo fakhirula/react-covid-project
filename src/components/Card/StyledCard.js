@@ -2,35 +2,32 @@ import styled from "styled-components";
 
 const StyledCard = styled.div`
   /* Small screen */
-  .container {
-    padding: 0.8rem 0;
+  .card {
+    padding: 1.5rem 0;
     background-color: #fff;
     border-radius: 10px;
+    box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.25);
   }
 
   .card__title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .card__count {
     color: #009884;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
   }
 
   /* Medium Screen */
   @media (min-width: 768px) {
-    .container {
+    .card {
       padding: 2rem 0;
     }
   }
 
   /* Large screen */
   @media (min-width: 992px) {
-    .container {
-      padding: 2rem 6rem;
-    }
-
     .card__title {
       font-size: 1.8rem;
     }
