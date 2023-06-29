@@ -48,7 +48,7 @@ const StyledDatas = styled.div`
   /* Medium Screen */
   @media (min-width: 768px) {
     .container {
-      padding: 6rem 2.5rem;
+      padding: 4rem 2.5rem;
     }
 
     .provinsi__title {
@@ -63,7 +63,7 @@ const StyledDatas = styled.div`
   /* Large Screen */
   @media (min-width: 992px) {
     .container {
-      padding: 4rem 8rem;
+      padding: 4rem;
       max-width: 1440px;
       margin: 0 auto;
     }

@@ -2,14 +2,9 @@ import styled from "styled-components";
 
 const StyledAddCaseForm = styled.div`
   /* Small Screen */
-  .container {
-    padding-top: 3rem;
-  }
-
   .form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
+    display: grid;
+    padding-top: 3rem;
   }
 
   .form__left {
@@ -85,22 +80,13 @@ const StyledAddCaseForm = styled.div`
   /* Large Screen */
   @media (min-width: 992px) {
     .form {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 6rem;
+      gap: 3rem;
     }
 
     .form__left {
       display: block;
-      flex-basis: 50%;
-    }
-
-    .form__right {
-      flex-basis: 40%;
-      text-align: left;
-      align-self: start;
     }
   }
 `;

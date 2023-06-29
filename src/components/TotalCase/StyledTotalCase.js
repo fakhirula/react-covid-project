@@ -23,7 +23,7 @@ const StyledTotalCase = styled.div`
   .cards {
     display: flex;
     flex-direction: column;
-    margin: 2.5rem 0;
+    margin: 2.5rem auto;
     gap: 1rem;
   }
 
