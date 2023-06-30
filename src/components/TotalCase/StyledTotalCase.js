@@ -20,7 +20,7 @@ const StyledTotalCase = styled.div`
     color: #118ab2;
   }
 
-  .cards {
+  .header__cards {
     display: flex;
     flex-direction: column;
     margin: 2.5rem auto;
@@ -41,7 +41,7 @@ const StyledTotalCase = styled.div`
       font-size: 1.5rem;
     }
 
-    .cards {
+    .header__cards {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin: 4rem 0;

@@ -10,7 +10,7 @@ function TotalCase({ title, subtitle, covidData }) {
           <h2 className="header__title">{title}</h2>
           <h3 className="header__tagline">Data Covid Berdasarkan {subtitle}</h3>
         </div>
-        <div className="cards">
+        <div className="header__cards">
           {covidData &&
             covidData.map(function (status) {
               return <Card key={status.status} listStatus={status} />;
