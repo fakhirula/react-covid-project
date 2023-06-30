@@ -5,7 +5,6 @@ const StyledRegions = styled.div`
     .container {
         padding: 3rem 2.5rem;
         text-align: center;
-        background-color: #f8f9fa;
     }
 
     .regions__title {

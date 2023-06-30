@@ -2,8 +2,9 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Hero from '../../components/Hero';
 import TotalCase from '../../components/TotalCase';
+import Regions from '../../components/Regions';
 
-function Main({ covidData }) {
+function Main({ covidData, regionsData }) {
   return (
     <>
       <Hero />
@@ -12,12 +13,14 @@ function Main({ covidData }) {
         subtitle="Indonesia"
         covidData={covidData}
       />
+      <Regions regionsData={regionsData} />
     </>
   );
 }
 
 function Indonesia() {
   const [covidData, setCovidData] = useState(null);
+  const [regionsData, setRegionsData] = useState(null);
 
   async function fetchData() {
     try {
@@ -33,10 +36,11 @@ function Indonesia() {
   useEffect(() => {
     fetchData().then((data) => {
       setCovidData(data.indonesia);
+      setRegionsData(data.regions);
     });
   }, []);
 
-  return <Main covidData={covidData} />;
+  return <Main covidData={covidData} regionsData={regionsData} />;
 }
 
 export default Indonesia;

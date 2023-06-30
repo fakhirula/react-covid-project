@@ -11,7 +11,7 @@ const StyledRegion = styled.div`
         padding: 2rem;
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 1px 1px 2px 0.5px rgba(0, 0, 0, 0.25);
+        border: 0.5px solid;
     }
 
     .region__title {
