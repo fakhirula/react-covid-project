@@ -1,10 +1,15 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { setCovidData, setRegionsData } from '../feature/covidSlice';
 import Hero from '../components/Hero';
 import TotalCase from '../components/TotalCase';
 import Regions from '../components/Regions';
+import axios from 'axios';
 
-function Main({ covidData, regionsData }) {
+function Main() {
+  const covidData = useSelector((state) => state.covid.covidData);
+  const regionsData = useSelector((state) => state.covid.regionsData);
+
   return (
     <>
       <Hero />
@@ -19,28 +24,25 @@ function Main({ covidData, regionsData }) {
 }
 
 function Home() {
-  const [covidData, setCovidData] = useState(null);
-  const [regionsData, setRegionsData] = useState(null);
-
-  async function fetchData() {
-    try {
-      const response = await axios.get(
-        'https://covid-fe-2023.vercel.app/api/global.json'
-      );
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchData().then((data) => {
-      setCovidData(data.global);
-      setRegionsData(data.regions);
-    });
-  }, []);
+    async function fetchData() {
+      try {
+        const response = await axios.get(
+          'https://covid-fe-2023.vercel.app/api/global.json'
+        );
+        dispatch(setCovidData(response.data.global));
+        dispatch(setRegionsData(response.data.regions));
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-  return <Main covidData={covidData} regionsData={regionsData} />;
+    fetchData();
+  }, [dispatch]);
+
+  return <Main />;
 }
 
 export default Home;

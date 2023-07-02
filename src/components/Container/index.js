@@ -1,7 +1,11 @@
-import styles from './index.module.css';
+import StyledIndex from './StyledIndex';
 
 function Container({ children }) {
-    return <div className={styles.container}>{children}</div>;
+    return (
+        <StyledIndex>
+            <div className="container">{children}</div>
+        </StyledIndex>
+    );
 }
 
 export default Container;

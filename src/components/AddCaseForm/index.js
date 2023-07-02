@@ -1,12 +1,22 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  setSelectedProvinceIndex,
+  setStatus,
+  setValue,
+  resetForm,
+} from '../../feature/addCaseSlice';
 import provincesData from '../../utils/constants/provinces';
 import Assets from '../Assets/img/addform.png';
 import StyledAddCaseForm from './StyledAddCaseForm';
 
 function AddCaseForm(props) {
-  const [selectedProvinceIndex, setSelectedProvinceIndex] = useState('');
-  const [status, setStatus] = useState('');
-  const [value, setValue] = useState(0);
+  const selectedProvinceIndex = useSelector(
+    (state) => state.addCase.selectedProvinceIndex
+  );
+  const status = useSelector((state) => state.addCase.status);
+  const value = useSelector((state) => state.addCase.value);
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -38,20 +48,19 @@ function AddCaseForm(props) {
 
     updatedProvinces[selectedProvinceIndex] = selectedProvince;
     props.onAddCase(updatedProvinces);
-    setStatus('');
-    setValue(0);
+    dispatch(resetForm());
   };
 
   const handleProvinceChange = (event) => {
-    setSelectedProvinceIndex(event.target.selectedIndex - 1);
+    dispatch(setSelectedProvinceIndex(event.target.selectedIndex - 1));
   };
 
   const handleStatusChange = (event) => {
-    setStatus(event.target.value);
+    dispatch(setStatus(event.target.value));
   };
 
   const handleValueChange = (event) => {
-    setValue(parseInt(event.target.value));
+    dispatch(setValue(parseInt(event.target.value)));
   };
 
   const provinces = provincesData.provinces;
