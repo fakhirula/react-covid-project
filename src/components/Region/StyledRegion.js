@@ -35,9 +35,7 @@ const StyledRegion = styled.div`
         font-weight: 600;
     }
 
-    .region__dataTitle,
-    .region__dataCount {
-        display: block;
+    .region__dataTitle {
         text-align: left;
     }
 
@@ -51,17 +49,6 @@ const StyledRegion = styled.div`
         .region__dataTitle {
             font-size: 1rem;
         }
-
-        .region__dataCount {
-            color: #009884;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-    }
-
-    /* Large screen */
-    @media (min-width: 992px) {
-        
     }
 `;
 
