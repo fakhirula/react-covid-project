@@ -1,9 +1,9 @@
-import Hero from '../components/Hero';
+import Blog from '../components/Blog';
 
 function Main() {
   return (
     <>
-      <Hero />
+      <Blog />
     </>
   );
 }

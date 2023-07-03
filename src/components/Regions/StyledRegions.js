@@ -16,7 +16,7 @@ const StyledRegions = styled.div`
     .regions__tagline {
         margin-top: 1rem;
         font-size: 1.2rem;
-        color: #118ab2;
+        color: #006098;
     }
 
     .regions__cards {

@@ -20,18 +20,17 @@ const StyledHero = styled.div`
 
   .hero__title {
     color: #009884;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .hero__tagline {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: #118ab2;
+    font-size: 1.1rem;
+    color: #006098;
   }
 
   .hero__desc {
-    margin: 2.5rem 0;
-    font-size: 1rem;
+    margin: 2.5rem 0 3rem;
+    font-size: 1.1rem;
     color: #1c3434;
   }
 
@@ -68,10 +67,7 @@ const StyledHero = styled.div`
       font-size: 3rem;
     }
 
-    .hero__tagline {
-      font-size: 1.5rem;
-    }
-
+    .hero__tagline,
     .hero__desc {
       font-size: 1.2rem;
     }
@@ -85,6 +81,10 @@ const StyledHero = styled.div`
   @media (min-width: 992px) {
     .hero {
       padding: 4rem;
+    }
+
+    .hero__title {
+      font-size: 3.5rem;
     }
   }
 `;

@@ -19,7 +19,7 @@ const StyledDatas = styled.div`
   .provinsi__tagline {
     margin-top: 1rem;
     font-size: 1.2rem;
-    color: #118ab2;
+    color: #006098;
   }
 
   .table__wrapper {
