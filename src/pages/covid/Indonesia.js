@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCovidData } from '../../feature/indonesiaSlice';
 import Hero from '../../components/Hero';
 import TotalCase from '../../components/TotalCase';
-import Regions from '../../components/Regions';
+import Datas from '../../components/Datas';
 
 function Main() {
   const { covidData, regionsData } = useSelector((state) => state.indonesia);
@@ -16,7 +16,7 @@ function Main() {
         subtitle="Indonesia"
         covidData={covidData}
       />
-      <Regions regionsData={regionsData} />
+      <Datas provinces={regionsData} />
     </>
   );
 }

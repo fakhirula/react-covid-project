@@ -1,15 +1,8 @@
-import { useState } from 'react';
-import provincesData from '../../utils/constants/provinces';
-import AddCaseForm from '../AddCaseForm';
 import StyledDatas from './StyledDatas';
 import Data from '../Data';
 
-function Datas() {
-  const [provinces, setProvinces] = useState(provincesData.provinces);
-
-  const handleAddCase = (updatedProvinces) => {
-    setProvinces(updatedProvinces);
-  };
+function Datas({ provinces, regionsData }) {
+  const dataToDisplay = provinces || regionsData;
 
   return (
     <StyledDatas>
@@ -33,10 +26,9 @@ function Datas() {
                   <th>Meninggal</th>
                 </tr>
               </thead>
-              <tbody>{<Data provinces={provinces} />}</tbody>
+              <tbody>{dataToDisplay && <Data provinces={dataToDisplay} />}</tbody>
             </table>
           </div>
-          <AddCaseForm provinces={provinces} onAddCase={handleAddCase} />
         </div>
       </div>
     </StyledDatas>

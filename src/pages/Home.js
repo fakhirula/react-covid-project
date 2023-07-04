@@ -6,8 +6,7 @@ import TotalCase from '../components/TotalCase';
 import Regions from '../components/Regions';
 
 function Main() {
-  const covidData = useSelector((state) => state.covid.covidData);
-  const regionsData = useSelector((state) => state.covid.regionsData);
+    const { covidData, regionsData } = useSelector((state) => state.covid);
 
   return (
     <>
@@ -17,7 +16,11 @@ function Main() {
         subtitle="Global"
         covidData={covidData}
       />
-      <Regions regionsData={regionsData} />
+      <Regions
+        title="Global"
+        subtitle="Bacaan Pilihan Covid"
+        regionsData={regionsData}
+      />
     </>
   );
 }
