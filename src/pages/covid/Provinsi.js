@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Hero from '../../components/Hero';
 import Datas from '../../components/Datas';
 import AddCaseForm from '../../components/AddCaseForm';
-import provincesData from '../../utils/constants/provinces';
+import { updateProvinces } from '../../feature/provincesSlice';
 
 function Main() {
-  const [provinces, setProvinces] = useState(provincesData.provinces);
+  const provinces = useSelector((state) => state.provinces.provinces);
+  const dispatch = useDispatch();
 
   const handleAddCase = (updatedProvinces) => {
-    setProvinces(updatedProvinces);
+    dispatch(updateProvinces(updatedProvinces));
   };
 
   return (
