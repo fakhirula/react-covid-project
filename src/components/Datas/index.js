@@ -1,7 +1,7 @@
 import StyledDatas from './StyledDatas';
 import Data from '../Data';
 
-function Datas({ provinces, regionsData }) {
+function Datas({ provinces, regionsData, title, subtitle }) {
   const dataToDisplay = provinces || regionsData;
 
   return (
@@ -9,9 +9,9 @@ function Datas({ provinces, regionsData }) {
       <div className="container">
         <div className="provinsi">
           <div>
-            <h1 className="provinsi__title">Provinsi</h1>
+            <h1 className="provinsi__title">{title}</h1>
             <h3 className="provinsi__tagline">
-              Data Covid Berdasarkan Provinsi
+              {subtitle}
             </h3>
           </div>
           <div className="table__wrapper">

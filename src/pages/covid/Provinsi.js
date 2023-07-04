@@ -14,7 +14,11 @@ function Main() {
   return (
     <>
       <Hero />
-      <Datas provinces={provinces} />
+      <Datas
+        provinces={provinces}
+        title="Provinsi"
+        subtitle="Data Covid Berdasarkan Provinsi"
+      />
       <AddCaseForm provinces={provinces} onAddCase={handleAddCase} />
     </>
   );

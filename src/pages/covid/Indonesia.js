@@ -16,7 +16,11 @@ function Main() {
         subtitle="Indonesia"
         covidData={covidData}
       />
-      <Datas provinces={regionsData} />
+      <Datas
+        provinces={regionsData}
+        title="Situation by Provinces"
+        subtitle="Data Covid Berdasarkan Provinsi"
+      />
     </>
   );
 }
