@@ -3,7 +3,6 @@ import styled from "styled-components";
 const StyledFooter = styled.div`
   /* Small Screen */
   .container {
-    width: 100vw;
     background-color: #097a7a;
     padding: 1rem;
     color: #fff;
@@ -23,8 +22,11 @@ const StyledFooter = styled.div`
   }
 
   .footer__list {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     list-style: none;
     margin: 0 auto;
   }
@@ -35,7 +37,6 @@ const StyledFooter = styled.div`
   }
 
   .footer__item {
-    margin: 0 1rem;
     cursor: pointer;
   }
 
@@ -49,16 +50,17 @@ const StyledFooter = styled.div`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: +0.5rem;
+      padding: 0.5rem;
       text-align: left;
     }
 
     .footer__brand {
+      flex: 1;
       margin-bottom: 0;
     }
 
     .footer__list {
-      margin: 0;
+      flex: 1;
     }
   }
 
@@ -70,7 +72,6 @@ const StyledFooter = styled.div`
 
     .footer {
       max-width: 1440px;
-      padding: 1rem;
       margin: 0 auto;
     }
   }

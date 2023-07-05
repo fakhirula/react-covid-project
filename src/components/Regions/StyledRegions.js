@@ -21,9 +21,8 @@ const StyledRegions = styled.div`
     }
 
     .regions__cards {
-        width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         margin: 2.5rem auto;
         gap: 1rem;
     }
@@ -44,7 +43,7 @@ const StyledRegions = styled.div`
 
         .regions__cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             margin: 4rem 0;
         }
     }

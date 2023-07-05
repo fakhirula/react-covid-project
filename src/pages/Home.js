@@ -16,11 +16,11 @@ function Main() {
         subtitle="Global"
         covidData={covidData}
       />
-      {/* <Regions
+      <Regions
         title="Global"
         subtitle="Bacaan Pilihan Covid"
         regionsData={regionsData}
-      /> */}
+      />
     </>
   );
 }
