@@ -16,7 +16,7 @@ function Blog() {
                 I'm also interested in mental health and psychology and always
                 looking to learn more. Let's connect and share our experiences!
                 </h4>
-                <a href="https://www.linkedin.com/in/fakhirul-akmal/" target="_blank" className="blog__anchor">Let's connect</a>
+                <a href="https://www.linkedin.com/in/fakhirul-akmal/" rel="noreferrer" target="_blank" className="blog__anchor">Let's connect</a>
             </div>
             <div className="blog__right">
                 <img className="blog__image" src={Assets} alt="" />
