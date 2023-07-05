@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledRegions = styled.div`
   /* Small screen */
-    .container {
+    .regions {
         width: 100%;
         padding: 3rem 2.5rem;
         text-align: center;
@@ -23,14 +23,14 @@ const StyledRegions = styled.div`
     .regions__cards {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         margin: 2.5rem auto;
         gap: 1rem;
     }
 
     /* Medium Screen */
     @media (min-width: 768px) {
-        .container {
+        .regions {
             padding: 4rem 2.5rem;
         }
 
@@ -51,7 +51,7 @@ const StyledRegions = styled.div`
 
     /* Large screen */
     @media (min-width: 992px) {
-        .container {
+        .regions {
             padding: 4rem;
         }
 

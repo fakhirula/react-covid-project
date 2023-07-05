@@ -4,7 +4,7 @@ const StyledAddCaseForm = styled.div`
   /* Small Screen */
   .form {
     display: grid;
-    padding-top: 3rem;
+    padding: 3rem;
   }
 
   .form__left {

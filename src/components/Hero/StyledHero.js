@@ -3,7 +3,6 @@ import styled from "styled-components";
 const StyledHero = styled.div`
   /* Small Screen */
   .hero {
-    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     padding: 3rem 1rem;

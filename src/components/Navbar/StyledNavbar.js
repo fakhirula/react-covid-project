@@ -3,7 +3,8 @@ import styled from "styled-components";
 const StyledNavbar = styled.div`
   /* Small Screen */
   .container {
-    width: 100%;
+    width: 100vw;
+    /* min-width: 450px; */
     background-color: #097a7a;
     padding: 1rem;
     color: #fff;
@@ -12,6 +13,7 @@ const StyledNavbar = styled.div`
   }
 
   .navbar {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,8 +26,10 @@ const StyledNavbar = styled.div`
   }
 
   .navbar__list {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     list-style: none;
     margin: 0 auto;
   }
@@ -36,7 +40,6 @@ const StyledNavbar = styled.div`
   }
 
   .navbar__item {
-    margin: 0 1rem;
     cursor: pointer;
   }
 
@@ -47,6 +50,7 @@ const StyledNavbar = styled.div`
   /* Medium Screen */
   @media (min-width: 768px) {
     .navbar {
+      width: 100%;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -57,10 +61,6 @@ const StyledNavbar = styled.div`
     .navbar__brand {
       font-size: 1.5rem;
       margin-bottom: 0;
-    }
-
-    .navbar__list {
-      margin: 0;
     }
   }
 

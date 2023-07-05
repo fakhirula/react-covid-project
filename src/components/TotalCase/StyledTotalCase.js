@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const StyledTotalCase = styled.div`
   /* Small screen */
-  .container {
+  .totalcase {
+    width: 100%;
     padding: 3rem 2.5rem;
     text-align: center;
     background-color: #f8f9fa;
@@ -29,7 +30,7 @@ const StyledTotalCase = styled.div`
 
   /* Medium Screen */
   @media (min-width: 768px) {
-    .container {
+    .totalcase {
       padding: 4rem 2.5rem;
     }
 
@@ -50,7 +51,7 @@ const StyledTotalCase = styled.div`
 
   /* Large screen */
   @media (min-width: 992px) {
-    .container {
+    .totalcase {
       padding: 4rem;
     }
   }

@@ -5,8 +5,8 @@ import StyledRegions from './StyledRegions';
 function Regions({ title, subtitle, regionsData }) {
   return (
     <StyledRegions>
-      <div className="container">
-        <div className="regions">
+      <div className="regions">
+        <div className="regions__header">
           <h2 className="regions__title">Situation by {title}</h2>
           <h3 className="regions__tagline">{subtitle}</h3>
         </div>

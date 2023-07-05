@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledFooter = styled.div`
   /* Small Screen */
   .container {
-    width: 100%;
+    width: 100vw;
     background-color: #097a7a;
     padding: 1rem;
     color: #fff;

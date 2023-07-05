@@ -5,7 +5,7 @@ import StyledTotalCase from './StyledTotalCase';
 function TotalCase({ title, subtitle, covidData }) {
   return (
     <StyledTotalCase>
-      <div className="container">
+      <div className="totalcase">
         <div className="header">
           <h2 className="header__title">{title}</h2>
           <h3 className="header__tagline">Data Covid Berdasarkan {subtitle}</h3>

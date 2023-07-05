@@ -3,7 +3,7 @@ import StyledIndex from './StyledIndex';
 function Container({ children }) {
     return (
         <StyledIndex>
-            <div className="container">{children}</div>
+            <div className="content">{children}</div>
         </StyledIndex>
     );
 }
