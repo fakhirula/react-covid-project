@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const StyledRegions = styled.div`
   /* Small screen */
     .container {
+        width: 100%;
         padding: 3rem 2.5rem;
         text-align: center;
     }
@@ -20,8 +21,9 @@ const StyledRegions = styled.div`
     }
 
     .regions__cards {
+        width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         margin: 2.5rem auto;
         gap: 1rem;
     }
@@ -42,7 +44,7 @@ const StyledRegions = styled.div`
 
         .regions__cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             margin: 4rem 0;
         }
     }

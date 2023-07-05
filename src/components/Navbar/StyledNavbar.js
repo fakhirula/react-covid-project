@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledNavbar = styled.div`
   /* Small Screen */
   .container {
+    width: 100%;
     background-color: #097a7a;
     padding: 1rem;
     color: #fff;
