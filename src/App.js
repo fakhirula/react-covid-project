@@ -8,10 +8,6 @@ import Layout from "./Layout";
 function App() {
   return (
     <>
-      {/*
-       * Render Halaman Home
-       * Jika ingin diubah, maka ubah di Halaman Home.
-       */}
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
